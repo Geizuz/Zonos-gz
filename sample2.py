@@ -4,6 +4,7 @@ from zonos.model import Zonos
 from zonos.conditioning import make_cond_dict
 from zonos.utils import DEFAULT_DEVICE as device
 import helper_functions as hfs
+import argparse
 
 # Load and process the speaker embedding
 def get_speaker_embedding(audio_path):
