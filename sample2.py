@@ -49,7 +49,7 @@ def main():
     "--txt_file_path",  # Optional argument with "--"
     #nargs="+",  # Accepts multiple space-separated values
     type=str,
-    help="List of sentences for text-to-speech conversion.",
+    help="txt file path for list of sentences for text-to-speech conversion.",
     default=None,  # Use default if not provided
   )
 
@@ -57,7 +57,7 @@ def main():
 
   # Get sentences based on file path or default
   #sentences = args.txt_file_path  # Always a file path or None object
-  sentences = get_sentences(file_path=args.txt_file_path, default_sentences=default_sentences)
+  sentences = hfs.get_sentences(file_path=args.txt_file_path, default_sentences=default_sentences)
 
   # Example: speaker embedding (assuming function exists)
   # speaker = get_speaker_embedding("assets/exampleaudio.mp3")
