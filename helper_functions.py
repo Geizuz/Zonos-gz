@@ -11,3 +11,13 @@ def txt_to_list(file_path):
         return f"Error: File not found at {file_path}"
     except Exception as e:
         return f"An error occurred: {e}"
+
+def get_sentences(file_path=None, default_sentences=None):
+    """Reads sentences from a file if file_path is provided; otherwise, returns default sentences."""
+    if file_path and os.path.isfile(file_path):
+        # Read sentences from the file
+        with open(file_path, 'r') as file:
+            return [line.strip() for line in file.readlines()]
+    else:
+        # Return default sentences if no file path or invalid file path is provided
+        return default_sentences
