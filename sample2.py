@@ -3,6 +3,7 @@ import torchaudio
 from zonos.model import Zonos
 from zonos.conditioning import make_cond_dict
 from zonos.utils import DEFAULT_DEVICE as device
+import helper_functions as hfs
 
 # Load and process the speaker embedding
 def get_speaker_embedding(audio_path):
@@ -45,15 +46,15 @@ def main():
   # Set up argument parser
   parser = argparse.ArgumentParser(description="Generate voice audio from a list of sentences")
   parser.add_argument(
-    "--str_list_input",  # Optional argument with "--"
+    "--txt_file_path",  # Optional argument with "--"
     #nargs="+",  # Accepts multiple space-separated values
-    type=list,
+    type=str,
     help="List of sentences for text-to-speech conversion.",
-    default=default_sentences,  # Use default if not provided
+    default=None,  # Use default if not provided
   )
 
   args = parser.parse_args()
-  sentences = args.str_list_input  # Always a list
+  sentences = args.txt_file_path  # Always a file path or None object
 
   # Example: speaker embedding (assuming function exists)
   # speaker = get_speaker_embedding("assets/exampleaudio.mp3")
