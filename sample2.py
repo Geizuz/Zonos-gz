@@ -54,7 +54,10 @@ def main():
   )
 
   args = parser.parse_args()
-  sentences = args.txt_file_path  # Always a file path or None object
+
+  # Get sentences based on file path or default
+  #sentences = args.txt_file_path  # Always a file path or None object
+  sentences = get_sentences(file_path=args.txt_file_path, default_sentences=default_sentences)
 
   # Example: speaker embedding (assuming function exists)
   # speaker = get_speaker_embedding("assets/exampleaudio.mp3")
