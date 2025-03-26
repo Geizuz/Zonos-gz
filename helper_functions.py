@@ -1,3 +1,5 @@
+import os
+
 def txt_to_list(file_path):
     """Reads a text file and returns a list of strings, 
     where each element is a line from the file.
