@@ -22,9 +22,12 @@ def get_sentences(file_path=None, default_sentences=None):
             with open(file_path, 'r') as file:
                 return [line.strip() for line in file.readlines()]
         except FileNotFoundError:
-            return f"Error: File not found at {file_path}"
+            print(f"Error: File not found at {file_path}")  # Print error to console
+            return default_sentences
         except Exception as e:
-            return f"An error occurred: {e}"
+            print(f"An error occurred: {e}")  # Print exception error to console
+            return default_sentences
     else:
         # Return default sentences if no file path or invalid file path is provided
+        print("Default sentences used. No file path or invalid file path provided")
         return default_sentences
