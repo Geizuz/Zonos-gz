@@ -16,7 +16,7 @@ def txt_to_list(file_path):
 
 def get_sentences(file_path=None, default_sentences=None):
     """Reads sentences from a file if file_path is provided; otherwise, returns default sentences."""
-    if file_path and os.path.isfile(file_path):
+    if file_path:
         # Read sentences from the file
         try:
             with open(file_path, 'r') as file:
@@ -29,5 +29,5 @@ def get_sentences(file_path=None, default_sentences=None):
             return default_sentences
     else:
         # Return default sentences if no file path or invalid file path is provided
-        print("Default sentences used. No file path or invalid file path provided")
+        print("Default sentences used. No file path provided")
         return default_sentences
