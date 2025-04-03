@@ -58,14 +58,15 @@ def main():
 
   # Get sentences based on file path or default
   #sentences = args.txt_file_path  # Always a file path or None object
-  sentences = hfs.get_sentences(file_path=args.txt_file_path, default_sentences=default_sentences)
+  start = 20
+  sentences = hfs.get_sentences(file_path=args.txt_file_path, default_sentences=default_sentences)[start:]
 
   # Example: speaker embedding (assuming function exists)
   # speaker = get_speaker_embedding("assets/exampleaudio.mp3")
 
   # Process each sentence
   for i, text in enumerate(sentences):
-    generate_speech(text, speaker, output_filename=f"output_{i}.wav")
+    generate_speech(text, speaker, output_filename=f"output_{start+i}.wav")
 
 if __name__ == "__main__":
   main()
