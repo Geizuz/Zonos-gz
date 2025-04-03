@@ -31,3 +31,11 @@ def get_sentences(file_path=None, default_sentences=None):
         # Return default sentences if no file path or invalid file path is provided
         print("Default sentences used. No file path provided")
         return default_sentences
+
+def parse_slice(str_values):
+    # Split by colon and convert to integers
+    parts = str_values.split(':')
+    start = int(parts[0]) if parts[0] else None
+    stop = int(parts[1]) if len(parts) > 1 and parts[1] else None
+    step = int(parts[2]) if len(parts) > 2 and parts[2] else None
+    return slice(start, stop, step)
