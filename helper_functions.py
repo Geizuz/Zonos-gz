@@ -20,7 +20,8 @@ def get_sentences(file_path=None, default_sentences=None):
         # Read sentences from the file
         try:
             with open(file_path, 'r') as file:
-                return [line.strip() for line in file.readlines()]
+                #return [line.strip() for line in file.readlines()] # Does not skip lines
+                return [line.strip() for line in file.readlines() if not line.strip().startswith("##")] # Skips lines starting with '##"
         except FileNotFoundError:
             print(f"Error: File not found at {file_path}")  # Print error to console
             return default_sentences
