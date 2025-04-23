@@ -58,7 +58,7 @@ def main():
 
   # Get sentences based on file path or default
   #sentences = args.txt_file_path  # Always a file path or None object
-  start = 20
+  start = 0
   sentences = hfs.get_sentences(file_path=args.txt_file_path, default_sentences=default_sentences)[start:]
 
   # Example: speaker embedding (assuming function exists)
