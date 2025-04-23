@@ -66,7 +66,7 @@ def main():
 
   # Process each sentence
   for i, text in enumerate(sentences):
-    generate_speech(text, speaker, output_filename=f"output_{start+i}.wav")
+    generate_speech(text, speaker, output_filename=f"output_rev_{start+i}.wav")
 
 if __name__ == "__main__":
   main()
